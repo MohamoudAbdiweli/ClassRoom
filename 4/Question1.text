@@ -1,0 +1,185 @@
+package test;
+
+
+class grandParent
+
+{
+
+    String color = "black";
+    String hairColor = "brown";
+    public void walking()
+
+    {
+        System.out.println("Walking by ....");
+    }
+
+    public void sleep()
+
+    {
+        System.out.println("sleeping at the ....");
+    }
+
+    public void prepare()
+    {
+        System.out.println("preparing...");
+    }
+
+}
+
+class parent extends grandParent
+
+{
+
+    String tongueColor = "tomato";
+
+    public void walking()
+
+    {
+        System.out.println("the parent Walk by motorcycle");
+    }
+
+    public void sleep()
+    {
+        System.out.println("the parent Sleep at the second floor");
+    }
+
+
+    public void learn()
+    {
+        System.out.println("learning ....");
+    }
+}
+
+class children extends parent
+
+{
+    String eyebrowColor = "blue";
+
+
+    public void learn()
+    {
+        System.out.println("The children learn a university");
+    }
+
+    public void write()
+    {
+        System.out.println("writing different books...");
+    }
+}
+
+class father extends grandParent
+
+{
+
+    public void walking()
+
+    {
+        System.out.println("the father Walks by school van");
+    }
+
+    public void work()
+    {
+        System.out.println("The father works at the central bank");
+    }
+
+}
+
+class mother extends grandParent
+
+{
+
+    public void sleep()
+    {
+        System.out.println("the mother Sleeps at the last floor");
+    }
+
+    public void work()
+
+    {
+        System.out.println("The mother works at the home");
+    }
+
+
+    public static void main(String[] args) {
+
+        grandParent p = new parent();
+        parent parent = new parent();
+        parent c = new children();
+        children child = new children();
+        grandParent f = new father();
+        father father = new father();
+        grandParent m = new mother();
+        mother mother = new mother();
+
+        System.out.println("parent class inherits the following methods from the base class  : ");
+
+        p.sleep();
+        p.walking();
+        p.prepare();
+
+        System.out.println("the parent class overrides the following methods from the supper class except learn method : ");
+
+        parent.sleep();
+        parent.walking();
+        parent.learn();
+
+
+        System.out.println("parent class inherits the following fields from the base class except the tongue color field : ");
+
+        System.out.println("parent body color : " +parent.color + " , " + " parent hair color :"
+        +parent.hairColor + " ," + " parent tongue color" + parent.tongueColor);
+
+
+        System.out.println("the children class inherits the following methods from the first child class : ");
+
+        c.sleep();
+        c.walking();
+        c.learn();
+        c.prepare();
+
+        System.out.println("the children class overrides the learn method from the the first subclass : ");
+
+        child.learn();
+        child.write();
+
+        System.out.println("the children class inherits the following fields from the first subclass except the eyebrow color field : ");
+
+        System.out.println("children body color :" +child.color + " ," + " children hair color : "
+        + child.hairColor + " , " + " children tongue color : "
+        + child.tongueColor + " , " + " children eye brush color : " + child.eyebrowColor);
+
+        System.out.println("the father class inherits the following methods from the super class : ");
+
+        f.sleep();
+        f.walking();
+
+        System.out.println("the mother class overrides the following methods from the super class except work method : ");
+
+        father.sleep();
+        father.walking();
+        father.work();
+
+        System.out.println("the father class inherits all the following fields from the super class : ");
+
+        System.out.println("father body color : "  + father.color + " , " + " father hair color : " + father.hairColor);
+
+
+        System.out.println("the mother class inherits the following methods from the super class : ");
+
+        f.sleep();
+        f.walking();
+
+        System.out.println("the mother class overrides the following methods from the super class except work method : ");
+
+        mother.sleep();
+        mother.walking();
+        mother.work();
+
+        System.out.println("the father class inherits all the following fields from the super class : ");
+
+        System.out.println("mother body color : "  + mother.color + " , " + " mother hair color : " + mother.color + mother.hairColor);
+
+    }
+
+    }
+
